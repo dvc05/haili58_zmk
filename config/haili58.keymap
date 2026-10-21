@@ -93,11 +93,11 @@
 
         layer_2 {
             bindings = <
-&studio_unlock  &trans          &trans  &trans              &trans      &trans          &trans   &trans           &trans           &trans         &trans      &trans
-&trans          &trans          &trans  &trans              &trans      &trans          &trans   &kp HOME         &kp PAGE_DOWN    &kp PAGE_UP    &kp END     &trans
-&trans          &trans          &trans  &trans              &trans      &trans          &trans   &kp LEFT         &kp DOWN         &kp UP         &kp RIGHT   &trans
-&trans          &trans          &trans  &trans              &trans      &trans          &trans   &trans           &trans           &trans         &trans      &trans
-&trans          &kp C_AL_CALC   &trans  &kp PRINTSCREEN     &trans      &trans          &trans   &trans           &trans           &trans         &trans      &trans
+&studio_unlock  &trans          &trans      &trans          &trans      &trans          &trans   &trans           &trans           &trans         &trans      &trans
+&trans          &trans          &trans      &trans          &trans      &trans          &trans   &kp HOME         &kp PAGE_DOWN    &kp PAGE_UP    &kp END     &trans
+&trans          &trans          &trans      &trans          &trans      &trans          &trans   &kp LEFT         &kp DOWN         &kp UP         &kp RIGHT   &trans
+&trans          &kp C_AL_CALC   &kp K_CALC  &kp PSCRN       &trans      &trans          &trans   &trans           &trans           &trans         &trans      &trans
+&trans          &trans          &trans      &trans          &trans      &trans          &trans   &trans           &trans           &trans         &trans      &trans
             >;
         };
     };
