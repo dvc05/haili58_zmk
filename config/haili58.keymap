@@ -32,11 +32,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4  &kp NUMBER_5        &kp NUMBER_6    &kp N7      &kp N8     &kp N9   &kp N0     &kp BACKSPACE
-&kp TAB           &kp Q         &kp W         &kp F          &kp P         &kp B               &kp J           &kp L       &kp U      &kp Y    &kp SEMI   &kp 
-&kp BACKSPACE     &kp A         &kp R         &kp S          &kp T         &kp G               &kp M           &kp N       &kp E      &kp I    &kp O      &mt LBKT SQT
-&kp LEFT_SHIFT    &kp Z         &kp X         &kp C          &kp D         &kp V               &kp K           &kp MH      &kp COMMA  &kp DOT  &kp FSLH   &kp ENTER
-&kp LEFT_ALT      &kp LEFT_GUI  &kp SPACE     &kp RIGHT_ALT  &mo 1         &studio_unlock      &studio_unlock  &kp DELETE  &mo 1      &mo 2    &kp MINUS  &kp EQUAL
+&kp ESC           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4  &kp NUMBER_5        &kp LS(N1)      &kp LS(MINUS)   &kp LS(N2)     &kp LS(N6)   &kp LS(N0)  &kp NUBS
+&kp TAB           &kp Q         &kp W         &kp F          &kp P         &kp B               &kp J           &kp L           &kp U          &kp Y        &kp SEMI    &kp LBKT
+&kp BACKSPACE     &kp A         &hml LALT R   &hml LSHFT S   &hml LCTRL T  &kp G               &kp M           &hmr LCTRL N    &hmr LSHFT E   &hmr LALT I  &kp O       &kp APOS
+&kp LCTRL         &kp Z         &kp X         &kp C          &kp D         &kp V               &kp K           &kp MH          &kp COMMA      &kp DOT      &kp FSLH    &kp MINUS
+&kp LEFT_ALT      &mo 2         &mo 1         &kp RIGHT_ALT  &mo 1         &C_MUTE             &studio_unlock  &kp DELETE      &mo 1          &kp SPACE    &kp RETURN  &kp LGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
@@ -44,11 +44,11 @@
 
         layer_1 {
             bindings = <
-&kp GRAVE  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5      &kp F6  &kp F7    &kp F8    &kp F9     &kp F10  &trans
-&trans     &kp F11  &kp F12  &trans  &trans  &trans      &trans  &trans    &kp UP    &trans     &trans   &kp RBKT
-&trans     &trans   &trans   &trans  &trans  &trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans   &kp DOUBLE_QUOTES
-&trans     &trans   &trans   &trans  &trans  &trans      &trans  &trans    &trans    &trans     &trans   &trans
-&trans     &trans   &trans   &trans  &trans  &trans      &trans  &trans    &trans    &trans     &trans   &trans
+&kp GRAVE      &kp F1           &kp F2           &kp F3          &kp F4          &kp F5          &kp F6  &kp F7    &kp F8    &kp F9     &kp F10  &trans
+&trans         &kp F11          &kp F12          &kp RALT(N8)    &RALT(N9)       &trans          &trans  &trans    &kp UP    &trans     &trans   &kp BKSL
+&kp RALT(N2)   &kp LSHFT(N3)    &kp RALT(N4)     &kp LSHFT(N8)   &kp LSHFT(N9)   &trans          &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans   &kp DOUBLE_QUOTES
+&trans         &kp LSHFT(N5)    &RBKT            &kp RALT(N7)    &kp RALT(N0)    &trans          &trans  &trans    &trans    &trans     &trans   &trans
+&trans         &trans           &trans           &trans          &trans          &trans          &trans  &trans    &trans    &trans     &trans   &trans
             >;
         };
 
