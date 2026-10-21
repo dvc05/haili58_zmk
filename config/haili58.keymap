@@ -26,17 +26,39 @@
             hold-trigger-on-release;
         };
     };
+    macros {
+        screen_left: screen_left {
+            compatible = "zmk,behaviour-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press &kp LGUI &kp LCTRL>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LGUI &kp LCTRL
+                ;
+        screen_right: screen_right {
+            compatible = "zmk,behaviour-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press &kp LGUI &kp LCTRL>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LGUI &kp LCTRL
+                ;
+        };
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4  &kp NUMBER_5        &kp LS(N1)      &kp LS(MINUS)   &kp LS(N2)     &kp LS(N6)   &kp LS(N0)  &kp NUBS
-&kp TAB           &kp Q         &kp W         &kp F          &kp P         &kp B               &kp J           &kp L           &kp U          &kp Y        &kp SEMI    &kp LBKT
-&kp BACKSPACE     &kp A         &hml LALT R   &hml LSHFT S   &hml LCTRL T  &kp G               &kp M           &hmr LCTRL N    &hmr LSHFT E   &hmr LALT I  &kp O       &kp APOS
-&kp LCTRL         &kp Z         &kp X         &kp C          &kp D         &kp V               &kp K           &kp MH          &kp COMMA      &kp DOT      &kp FSLH    &kp MINUS
-&kp LEFT_ALT      &mo 2         &mo 1         &kp RIGHT_ALT  &mo 1         &C_MUTE             &studio_unlock  &kp DELETE      &mo 1          &kp SPACE    &kp RETURN  &kp LGUI
+&kp ESC           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4  &kp NUMBER_5        &kp LS(N1)          &kp LS(MINUS)   &kp LS(N2)     &kp LS(N6)   &kp LS(N0)  &kp NUBS
+&kp TAB           &kp Q         &kp W         &kp F          &kp P         &kp B               &kp J               &kp L           &kp U          &kp Y        &kp SEMI    &kp LBKT
+&kp BACKSPACE     &kp A         &hml LALT R   &hml LSHFT S   &hml LCTRL T  &kp G               &kp M               &hmr LCTRL N    &hmr LSHFT E   &hmr LALT I  &kp O       &kp APOS
+&kp LCTRL         &kp Z         &kp X         &kp C          &kp D         &kp V               &kp K               &kp MH          &kp COMMA      &kp DOT      &kp FSLH    &kp MINUS
+&screen_left      &mo 2         &mo 1         &kp RIGHT_ALT  &mo 1         &C_MUTE             &kp C_PLAY_PAUSE    &kp DELETE      &kp CAPS       &kp SPACE    &kp RETURN  &kp LGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
@@ -44,21 +66,21 @@
 
         layer_1 {
             bindings = <
-&kp GRAVE      &kp F1           &kp F2           &kp F3          &kp F4          &kp F5          &kp F6  &kp F7    &kp F8    &kp F9     &kp F10  &trans
-&trans         &kp F11          &kp F12          &kp RALT(N8)    &RALT(N9)       &trans          &trans  &trans    &kp UP    &trans     &trans   &kp BKSL
-&kp RALT(N2)   &kp LSHFT(N3)    &kp RALT(N4)     &kp LSHFT(N8)   &kp LSHFT(N9)   &trans          &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans   &kp DOUBLE_QUOTES
-&trans         &kp LSHFT(N5)    &RBKT            &kp RALT(N7)    &kp RALT(N0)    &trans          &trans  &trans    &trans    &trans     &trans   &trans
-&trans         &trans           &trans           &trans          &trans          &trans          &trans  &trans    &trans    &trans     &trans   &trans
+&kp GRAVE      &kp F1           &kp F2           &kp F3          &kp F4          &kp F5          &kp F6      &kp F7    &kp F8    &kp F9     &kp F10          &trans
+&trans         &kp F11          &kp F12          &kp RALT(N8)    &RALT(N9)       &kp EQUAL       &kp RBKT    &kp N7    &kp N8    &kp N9     &kp LSHFT(BSLH)  &kp BKSL
+&kp RALT(N2)   &kp LSHFT(N3)    &kp RALT(N4)     &kp LSHFT(N8)   &kp LSHFT(N9)   &trans          &trans      &kp N4    &kp N5    &kp N6     &kp MINUS        &kp LSHFT(N7)
+&trans         &kp LSHFT(N5)    &RBKT            &kp RALT(N7)    &kp RALT(N0)    &trans          &trans      &kp N1    &kp N2    &kp N3     &kp SLASH        &kp LS(N0)
+&screen_right  &trans           &trans           &trans          &trans          &trans          &trans      &trans    &trans    &trans     &kp DOT          &kp N0
             >;
         };
 
         layer_2 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans           &trans       &trans         &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp INS  &kp HOME         &kp PAGE_UP  &kp PAGE_DOWN  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp END  &kp PRINTSCREEN  &trans       &trans         &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans           &trans       &trans         &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans           &trans       &trans         &trans  &trans
+&studio_unlock  &trans      &trans  &trans      &trans      &trans          &trans   &trans           &trans           &trans         &trans      &trans
+&trans          &trans      &trans  &trans      &trans      &trans          &trans   &kp HOME         &kp PAGE_DOWN    &kp PAGE_UP    &kp END     &trans
+&trans          &trans      &trans  &trans      &trans      &trans          &trans   &kp LEFT         &kp DOWN         &kp UP         &kp RIGHT   &trans
+&trans          &trans      &trans  &trans      &trans      &trans          &trans   &trans           &trans           &trans         &trans      &trans
+&trans          &kc K_CALC  &trans  &kc PSCRN   &trans      &trans          &trans   &trans           &trans           &trans         &trans      &trans
             >;
         };
     };
